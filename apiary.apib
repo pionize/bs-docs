@@ -10,11 +10,12 @@ BillionaireStore API Collection.
 ### Login [POST /api/user/login]
 
 + Request (application/json)
+    + Body
 
-        {
-          "username": "andreas@skyshi.com",
-          "password": "andreas123%"
-        }
+            {
+              "username": "andreas@skyshi.com",
+              "password": "andreas123%"
+            }
 
 + Response 200 (application/json)
 
@@ -2277,8 +2278,64 @@ BillionaireStore API Collection.
                 ]
             }
         }
-        
-### Order Check [POST /api/check]
+### Order Check [POST /api/order/tracking]
+
++ Request (application/json)
+    + Body
+
+            {
+                "invoice_number": "US121749802"
+            }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Order",
+            "meta": [],
+            "data": {
+                "manifest": [
+                    {
+                        "city_name": "JAKARTA",
+                        "keterangan": "Manifested",
+                        "mfcnote_no": "CGKNA03940910917",
+                        "manifest_code": "1",
+                        "manifest_date": "24-AUG-2017 22:53"
+                    },
+                    {
+                        "city_name": "GATEWAY, BANDUNG",
+                        "keterangan": "On Transit",
+                        "mfcnote_no": "CGKNA03940910917",
+                        "manifest_code": "2",
+                        "manifest_date": "25-AUG-2017 08:07"
+                    },
+                    {
+                        "city_name": "BANDUNG",
+                        "keterangan": "Received On Destination",
+                        "mfcnote_no": "CGKNA03940910917",
+                        "manifest_code": "3",
+                        "manifest_date": "25-AUG-2017 08:16"
+                    }
+                ],
+                "runsheet": [
+                    {
+                        "city_name": "BANDUNG",
+                        "pod_status": "NOT TIME DELIVERY",
+                        "drsheet_cnote_no": "CGKNA03940910917",
+                        "mrsheet_date": "25-aug-2017 15:42"
+                    },
+                    {
+                        "city_name": "BANDUNG",
+                        "pod_status": "YANG BERSANGKUTAN",
+                        "drsheet_cnote_no": "CGKNA03940910917",
+                        "mrsheet_date": "26-aug-2017 09:21"
+                    }
+                ]
+            }
+        }
+
+### Order Check [POST /api/order/check]
 
 + Request (application/json)
     + Body
@@ -4407,4 +4464,120 @@ BillionaireStore API Collection.
                     "image": null,
                     "url": null
                 }
+            }
+
+## Waiting List Collection [/waiting_list]
+### Create Waiting List [POST /api/waiting_list]
+
++ Request (application/json)
+    + Body
+
+            {
+              "name" : "andrew",
+              "email": "andrew@pionize.com",
+              "phone_no": "08562905595"
+            }
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Waiting List",
+                "meta": [],
+                "data": {
+                    "id": "93194",
+                    "email": "andrew@pionize.com",
+                    "name": "andrew",
+                    "phone": "08562905595"
+                }
+            }
+
+## Leader Board Collection [/leaderboard]
+### List Leader Board [GET /api/leaderboard]
+
++ Parameters
+    + page: 1 (optional, number)
+    + pagesize: 10 (optional, number)
+    + product_id: 1 (optional, number)
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Reseller Leaderboard",
+                "meta": [],
+                "data": [
+                    {
+                        "uid": "5705",
+                        "name": "elisrm",
+                        "full_name": "Elis Billionaire Store",
+                        "surname": "Elis",
+                        "total": 54930300
+                    },
+                    {
+                        "uid": "5764",
+                        "name": "gianbs",
+                        "full_name": "Gian BS",
+                        "surname": "Gian",
+                        "total": 48486500
+                    },
+                    {
+                        "uid": "5827",
+                        "name": "Ibrahimdwis",
+                        "full_name": "Ibrahim Dwi Santoso",
+                        "surname": "Ibrahim",
+                        "total": 48337000
+                    },
+                    {
+                        "uid": "9738",
+                        "name": "fikrykirimemail",
+                        "full_name": "fikry",
+                        "surname": "fikry",
+                        "total": 34273100
+                    },
+                    {
+                        "uid": "5726",
+                        "name": "ghofaz@gmail.com",
+                        "full_name": "GUSLAENI HAFID",
+                        "surname": "GUSLAENI",
+                        "total": 29409500
+                    },
+                    {
+                        "uid": "5743",
+                        "name": "instant",
+                        "full_name": "Yuli Indrawanto",
+                        "surname": "indra",
+                        "total": 22412500
+                    },
+                    {
+                        "uid": "5716",
+                        "name": "dspthea",
+                        "full_name": "Dasep Rusmawan",
+                        "surname": "Dasep",
+                        "total": 22306600
+                    },
+                    {
+                        "uid": "5707",
+                        "name": "teguhams",
+                        "full_name": "Teguh Arif ",
+                        "surname": "Teguh",
+                        "total": 21765200
+                    },
+                    {
+                        "uid": "5751",
+                        "name": "bintarilulu@gmail.com",
+                        "full_name": "Lulu Bintari",
+                        "surname": "Lulu",
+                        "total": 20975200
+                    },
+                    {
+                        "uid": "9739",
+                        "name": "deddykirimemail",
+                        "full_name": "deddy",
+                        "surname": "deddy",
+                        "total": 19007600
+                    }
+                ]
             }
