@@ -1905,7 +1905,16 @@ BillionaireStore API Collection.
 
 ## Material Collection [/material]
 
-### Get All Material [GET /api/material]
+### Get All Material [GET /api/material{?page}{?pagesize}{?category}]
+
++ Parameters
+    + page: 1 (optional, number)
+    + pagesize: 10 (optional, number)
+    + category: kurikulum (optional, string)
+    
+        + Values:
+            + `kurikulum`
+            + `sharing`
             
 + Response 200 (application/json)
 
