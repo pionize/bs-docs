@@ -4176,3 +4176,236 @@ BillionaireStore API Collection.
                     }
                 ]
             }
+
+### Get Event Detail [GET /api/event{id}]
+
++ Parameters
+    + id: 247 (required, number)
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Event data.",
+                "meta": [],
+                "data": {
+                    "id": "247",
+                    "title": "Test Event 1",
+                    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n",
+                    "date_event": "1506823200"
+                }
+            }
+
+## Site Config Collection [/event]
+### Get Site Config [GET /api/config]
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Configuration status",
+                "meta": [],
+                "data": {
+                    "maintenance_mode": 0
+                }
+            }
+
+## Transaction Collection [/transaction]
+### Get All Transactions Statistic (For Reseller) [GET /api/transaction{?date_start}{?date_end}{?status}{?product_id}{?program}]
+
++ Parameters
+    + date_start: (2017-12-30) (optional, number)
+    + date_end: (2017-12-30) (optional, number)
+    + status (optional, string)
+
+        + Values
+            + `pending`
+            + `expired`
+            + `success`
+
+    + program (optional, string)
+
+        + Values
+            + `ready`
+            + `promo`
+            + `preorder`
+
+    + product_id: 63 (optional, number)
+
++ Request (application/json)
+    + Headers
+
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Transaction list.",
+                "meta": [],
+                "data": {
+                    "dropship": {
+                        "regular_order": 15,
+                        "regular_product": 15,
+                        "preorder_order": 10,
+                        "preorder_product": 19
+                    },
+                    "affiliate": {
+                        "regular_order": 6,
+                        "regular_product": 8,
+                        "preorder_order": 0,
+                        "preorder_product": 0
+                    },
+                    "cod": {
+                        "regular_order": 0,
+                        "regular_product": 0,
+                        "preorder_order": 0,
+                        "preorder_product": 0
+                    },
+                    "bulk": {
+                        "regular_order": 0,
+                        "regular_product": 0,
+                        "preorder_order": 0,
+                        "preorder_product": 0
+                    },
+                    "abroad": {
+                        "regular_order": 0,
+                        "regular_product": 0,
+                        "preorder_order": 0,
+                        "preorder_product": 0
+                    },
+                    "community": {
+                        "regular_order": 0,
+                        "regular_product": 0,
+                        "preorder_order": 0,
+                        "preorder_product": 0
+                    }
+                }
+            }
+
+### Get Transactions Detail (For Reseller) [GET /api/transaction/{product_type}{?order_status}{?order_type}]
+
++ Parameters
+    + product_type (required, string)
+
+        + Values
+            + `regular`
+            + `preorder`
+
+    + order_type (optional, string)
+
+        + Values
+            + `dropship`
+            + `affiliate`
+            + `regular`
+            + `cod`
+            + `community`
+            + `bulk`
+            + `abroad`
+
+    + order_status (optional, string)
+
+        + Values
+            + `canceled`
+            + `expired`
+            + `pending`
+            + `pending_shipment`
+            + `pending_confirmation`
+            + `shipped`
+            + `completed`
+
++ Request (application/json)
+    + Headers
+
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Transaction detail list.",
+                "meta": [],
+                "data": [
+                    {
+                        "product_data": {
+                            "product_id": "27",
+                            "title": "Workshop Jago FB Ads"
+                        },
+                        "counter": 3
+                    }
+                ]
+            }
+
+## Tutorial Collection [/tutorial]
+### Get All Tutorial [GET /api/tutorial{?page}{?pagesize}]
+
++ Parameters
+    + page: 1 (optional, number)
+    + pagesize: 10 (optional, number)
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Tutorial Kit List",
+                "meta": {
+                    "total": "4"
+                },
+                "data": [
+                    {
+                        "id": "154",
+                        "title": "PANDUAN RETUR BARANG RUSAK/SALAH PESANAN ATAU KELEBIHAN KIRIMAN",
+                        "body": "<p><u><strong>Langkah 1 </strong></u><br />\r\nSilahkan foto terlebih dahulu barang yang sampai kepada Anda lengkap dengan label pengirimannya, jika ada kerusakan silahkan foto juga bagian produk yang mengalami kerusakannya.</p>\r\n\r\n<p><img alt=\"\" height=\"364\" src=\"http://bs.local/sites/default/files/retur%20barang.jpg\" width=\"485\" /></p>\r\n\r\n<p><br />\r\n<br />\r\n<br />\r\n<br />\r\n<u><strong>Langkah 2</strong></u><br />\r\nKirim bukti foto produk (untuk produk rusak) beserta foto label pengiriman Billionaire Store (untuk kelebihan kiriman), kemudian Chat admin kami khusus reseller yaitu mas <u><a href=\"https://www.facebook.com/jayaramadhanbs\">Jaya Ramadhan</a></u> melalui aplikasi Telegram dengan username @Jayaramadhan atau save nomor<br />\r\n0857 2000 1871, maka nanti akan muncul secara otomatis aplikasi telegramnya.<br />\r\n--------------------------------------------------------------------------------------------------------------<br />\r\n<strong>Format Chat Kendala</strong> :<br />\r\nFoto kerusakan barang dan foto label<br />\r\nNo invoice<br />\r\nNama reseller<br />\r\nNama customer<br />\r\nNomor hp<br />\r\nAlamat<br />\r\nProvinsi<br />\r\nKota<br />\r\nKecamatan<br />\r\nKode pos&nbsp;&nbsp;<br />\r\nPesanan<br />\r\nPcs<br />\r\nKendala&nbsp;<br />\r\n--------------------------------------------------------------------------------------------------------------</p>\r\n\r\n<p><img alt=\"\" height=\"364\" src=\"http://bs.local/sites/default/files/retur%20barang.jpg\" width=\"485\" /></p>\r\n",
+                        "image": null,
+                        "url": null
+                    },
+                    {
+                        "id": "164",
+                        "title": "Tutorial order dropship",
+                        "body": null,
+                        "image": null,
+                        "url": "https://www.youtube.com/watch?v=kPN2ZSrgUw0&feature=youtu.be"
+                    },
+                    {
+                        "id": "165",
+                        "title": "Tutorial order affiliasi",
+                        "body": null,
+                        "image": null,
+                        "url": "https://www.youtube.com/watch?v=b3aD_2uBbeI"
+                    },
+                    {
+                        "id": "227",
+                        "title": "Tentang Fitur di Member Area Reseller",
+                        "body": null,
+                        "image": null,
+                        "url": "https://youtu.be/STRUNQaODAw"
+                    }
+                ]
+            }
+
+### Get Tutorial Detail [GET /api/tutorial{id}]
+
++ Parameters
+    + id: 154 (required, number)
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Tutorial kit data.",
+                "meta": [],
+                "data": {
+                    "id": "154",
+                    "title": "PANDUAN RETUR BARANG RUSAK/SALAH PESANAN ATAU KELEBIHAN KIRIMAN",
+                    "body": "<p><u><strong>Langkah 1 </strong></u><br />\r\nSilahkan foto terlebih dahulu barang yang sampai kepada Anda lengkap dengan label pengirimannya, jika ada kerusakan silahkan foto juga bagian produk yang mengalami kerusakannya.</p>\r\n\r\n<p><img alt=\"\" height=\"364\" src=\"http://bs.local/sites/default/files/retur%20barang.jpg\" width=\"485\" /></p>\r\n\r\n<p><br />\r\n<br />\r\n<br />\r\n<br />\r\n<u><strong>Langkah 2</strong></u><br />\r\nKirim bukti foto produk (untuk produk rusak) beserta foto label pengiriman Billionaire Store (untuk kelebihan kiriman), kemudian Chat admin kami khusus reseller yaitu mas <u><a href=\"https://www.facebook.com/jayaramadhanbs\">Jaya Ramadhan</a></u> melalui aplikasi Telegram dengan username @Jayaramadhan atau save nomor<br />\r\n0857 2000 1871, maka nanti akan muncul secara otomatis aplikasi telegramnya.<br />\r\n--------------------------------------------------------------------------------------------------------------<br />\r\n<strong>Format Chat Kendala</strong> :<br />\r\nFoto kerusakan barang dan foto label<br />\r\nNo invoice<br />\r\nNama reseller<br />\r\nNama customer<br />\r\nNomor hp<br />\r\nAlamat<br />\r\nProvinsi<br />\r\nKota<br />\r\nKecamatan<br />\r\nKode pos&nbsp;&nbsp;<br />\r\nPesanan<br />\r\nPcs<br />\r\nKendala&nbsp;<br />\r\n--------------------------------------------------------------------------------------------------------------</p>\r\n\r\n<p><img alt=\"\" height=\"364\" src=\"http://bs.local/sites/default/files/retur%20barang.jpg\" width=\"485\" /></p>\r\n",
+                    "image": null,
+                    "url": null
+                }
+            }
+
