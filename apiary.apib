@@ -3967,8 +3967,8 @@ BillionaireStore API Collection.
                 }
             }
 
-## Testimonial Collection [/shipping]
-### Get Testimonial [GET /api/shipping]
+## Testimonial Collection [/testimonial]
+### Get Testimonial [GET /api/testimonial]
 
 + Response 200 (application/json)
 
@@ -4023,4 +4023,141 @@ BillionaireStore API Collection.
                         "images": "http://bs.local/sites/default/files/hendy.jpg"
                     }
                 ]
+            }
+
+## Banner Collection [/banner]
+### Get All Banner [GET /api/banner{?page}{?pagesize}{?type}{?location}{?placement}]
+
++ Parameters
+    + page: 1 (optional, number)
+    + pagesize: 10 (optional, number)
+    + type: `slider` (optional, string)
+    + location: `home` (optional, string)
+    + placement (optional, string)
+
+        + Values
+            + `web`
+            + `reseller`
+
++ Response 200 (application/json)
+
+            {
+            	"code": 200,
+            	"status": true,
+            	"message": "Banners List",
+            	"meta": {
+            		"total": "15"
+            	},
+            	"data": [{
+            		"title": "Banner paket tetralogi saptuari",
+            		"url_access": "http://billionairestore.co.id/69-detail-paket-tetralogi",
+            		"location": "home",
+            		"size": "570 pixels",
+            		"type": "slider",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/banner-paket-tetralogi-saptuari.png"
+            	}, {
+            		"title": "Banner Jagoan Marketplace coming soon",
+            		"url_access": "http://jagoanmarketplace.com/",
+            		"location": "home",
+            		"size": "570 pixels",
+            		"type": "slider",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/JMBANNER.jpg"
+            	}, {
+            		"title": "Banner Mentoring Funneling Slider big",
+            		"url_access": "https://mentoringfunneling.com/",
+            		"location": "home",
+            		"size": "570 pixels",
+            		"type": "slider",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/banner-mentoring-funneling-big.png"
+            	}, {
+            		"title": "Sidebar Banner menjadi mitra bs",
+            		"url_access": "http://billionairestore.co.id//60-cara-menjadi-mitra",
+            		"location": "home",
+            		"size": "185",
+            		"type": "sidebar_ads",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/ADS%202.jpg"
+            	}, {
+            		"title": "Banner Status Pengiriam Paket Sadis",
+            		"url_access": "https://www.google.co.id/",
+            		"location": "home",
+            		"size": "570 pixels",
+            		"type": "banner_1",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/banner-status-pengiriman-paket-sadis_0.png"
+            	}, {
+            		"title": "Banner butuh bantuan cs",
+            		"url_access": "http://billionairestore.co.id/",
+            		"location": "home",
+            		"size": "385 pixels",
+            		"type": "banner_2",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/ADS%20SQUARE%201.jpg"
+            	}, {
+            		"title": "Banner 3",
+            		"url_access": "https://www.facebook.com/",
+            		"location": "home",
+            		"size": "385 pixels",
+            		"type": "banner_3",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/ADS%20SQUARE%202.jpg"
+            	}, {
+            		"title": "Banner Book & DVD 1",
+            		"url_access": null,
+            		"location": "home",
+            		"size": "575",
+            		"type": "banner_cat_1",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/cat-banner1.png"
+            	}, {
+            		"title": "Banner Book & DVD 2",
+            		"url_access": null,
+            		"location": "home",
+            		"size": "575",
+            		"type": "banner_cat_1",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/cat-banner2.png"
+            	}, {
+            		"title": "Banner Product Digital 1",
+            		"url_access": null,
+            		"location": "home",
+            		"size": "575",
+            		"type": "banner_cat_2",
+            		"images": "http://api.bs.labs.skyshi.com/sites/default/files/cat-banner3.png"
+            	}]
+            }
+
+## Event Collection [/banner]
+### Get All Event [GET /api/event{?page}{?pagesize}{?sort}]
+
++ Parameters
+    + page: 1 (optional, number)
+    + pagesize: 10 (optional, number)
+    + sort (optional, string)
+
+        + Values
+            + `created:ASC`
+            + `created:DESC`
+            + `date_event:ASC`
+            + `date_event:DESC`
+
++ Response 200 (application/json)
+
+            {
+            	"code": 200,
+            	"status": true,
+            	"message": "Event List",
+            	"meta": {
+            		"total": "3"
+            	},
+            	"data": [{
+            		"id": "247",
+            		"title": "Test Event 1",
+            		"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n",
+            		"date_event": "1506823200"
+            	}, {
+            		"id": "248",
+            		"title": "Test Event 2",
+            		"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n",
+            		"date_event": "1509422400"
+            	}, {
+            		"id": "249",
+            		"title": "Test Event 3",
+            		"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n",
+            		"date_event": "1508756400"
+            	}]
             }
