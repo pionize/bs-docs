@@ -3678,22 +3678,23 @@ BillionaireStore API Collection.
     + product_id: 1 (required, number)
 
 + Response 200 (application/json)
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product",
-            "meta": [],
-            "data": [
-                {
-                    "counter": 127,
-                    "referrer": ""
-                },
-                {
-                    "counter": 4,
-                    "referrer": "localhost:3002/res-andreasskyshi/1-detail-30-hari-jago-jualan"
-                }
-            ]
-        }
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Product",
+                "meta": [],
+                "data": [
+                    {
+                        "counter": 127,
+                        "referrer": ""
+                    },
+                    {
+                        "counter": 4,
+                        "referrer": "localhost:3002/res-andreasskyshi/1-detail-30-hari-jago-jualan"
+                    }
+                ]
+            }
 
 ## Shipping Collection [/shipping]
 ### Shipping Apply [POST /api/shipping]
@@ -3705,138 +3706,138 @@ BillionaireStore API Collection.
 
     + Body
 
-        {
-          "destination" : 3301,
-          "courier": "J&T",
-          "service": "EZ"
-        }
+            {
+              "destination" : 3301,
+              "courier": "J&T",
+              "service": "EZ"
+            }
 
 + Response 200 (application/json)
 
-        {
-            "code": 200,
-            "status": true,
-            "message": "Order",
-            "meta": [],
-            "data": {
-                "order_id": "49654",
-                "invoice_number": null,
-                "shipping_number": null,
-                "order_type": "Dropship",
-                "status": "checkout_shipping",
-                "transfer_nominal": 0,
-                "created": "1513656597",
-                "changed": "1513739476",
-                "order_total": "116878",
-                "order_total_currency": "IDR",
-                "line_items": [
-                    {
-                        "label": "30HariJagoJualan-1",
-                        "quantity": "1.00",
-                        "unit_price": "103600",
-                        "unit_price_currency": "IDR",
-                        "total_price": "103600",
-                        "total_price_currency": "IDR",
-                        "detail": {
-                            "uid": "1",
-                            "product_id": "1",
-                            "sku": "30HariJagoJualan-1",
-                            "title": "30 Hari Jago Jualan",
-                            "created": "1489985080",
-                            "changed": "1513669866",
-                            "rating": 0,
-                            "price": 259000,
-                            "price_currency": "IDR",
-                            "sell_price": 103600,
-                            "sell_price_currency": "IDR",
-                            "stock": 290,
-                            "weight": "320.00000 g",
-                            "images": [
-                                "http://bs.local/sites/default/files/styles/product_image/public/products/30%20HJJ%20270X360.png?itok=sNwEimrl"
-                            ],
-                            "program": "Discount 60%",
-                            "body": "<div class=\"desc-item\"><a aria-expanded=\"true\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-1\">Capter 1</a></p>\n<div class=\"desc-content collapse in\" id=\"capter-1\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-2\">Capter 2</a></p>\n<div class=\"desc-content collapse\" id=\"capter-2\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-3\">Capter 3</a></p>\n<div class=\"desc-content collapse\" id=\"capter-3\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-4\">Capter 4</a></p>\n<div class=\"desc-content collapse\" id=\"capter-4\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-5\">Capter 5</a></p>\n<div class=\"desc-content collapse\" id=\"capter-5\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n",
-                            "categories": [
-                                {
-                                    "tid": "2",
-                                    "name": "Book & DVD"
-                                }
-                            ],
-                            "event": [
-                                {
-                                    "tid": "5273",
-                                    "name": "Promo"
+            {
+                "code": 200,
+                "status": true,
+                "message": "Order",
+                "meta": [],
+                "data": {
+                    "order_id": "49654",
+                    "invoice_number": null,
+                    "shipping_number": null,
+                    "order_type": "Dropship",
+                    "status": "checkout_shipping",
+                    "transfer_nominal": 0,
+                    "created": "1513656597",
+                    "changed": "1513739476",
+                    "order_total": "116878",
+                    "order_total_currency": "IDR",
+                    "line_items": [
+                        {
+                            "label": "30HariJagoJualan-1",
+                            "quantity": "1.00",
+                            "unit_price": "103600",
+                            "unit_price_currency": "IDR",
+                            "total_price": "103600",
+                            "total_price_currency": "IDR",
+                            "detail": {
+                                "uid": "1",
+                                "product_id": "1",
+                                "sku": "30HariJagoJualan-1",
+                                "title": "30 Hari Jago Jualan",
+                                "created": "1489985080",
+                                "changed": "1513669866",
+                                "rating": 0,
+                                "price": 259000,
+                                "price_currency": "IDR",
+                                "sell_price": 103600,
+                                "sell_price_currency": "IDR",
+                                "stock": 290,
+                                "weight": "320.00000 g",
+                                "images": [
+                                    "http://bs.local/sites/default/files/styles/product_image/public/products/30%20HJJ%20270X360.png?itok=sNwEimrl"
+                                ],
+                                "program": "Discount 60%",
+                                "body": "<div class=\"desc-item\"><a aria-expanded=\"true\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-1\">Capter 1</a></p>\n<div class=\"desc-content collapse in\" id=\"capter-1\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-2\">Capter 2</a></p>\n<div class=\"desc-content collapse\" id=\"capter-2\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-3\">Capter 3</a></p>\n<div class=\"desc-content collapse\" id=\"capter-3\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-4\">Capter 4</a></p>\n<div class=\"desc-content collapse\" id=\"capter-4\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-5\">Capter 5</a></p>\n<div class=\"desc-content collapse\" id=\"capter-5\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n",
+                                "categories": [
+                                    {
+                                        "tid": "2",
+                                        "name": "Book & DVD"
+                                    }
+                                ],
+                                "event": [
+                                    {
+                                        "tid": "5273",
+                                        "name": "Promo"
+                                    },
+                                    {
+                                        "tid": "5274",
+                                        "name": "Best Seller"
+                                    },
+                                    {
+                                        "tid": "5275",
+                                        "name": "Recommended"
+                                    }
+                                ],
+                                "pre_order": {
+                                    "status": false,
+                                    "date": null
                                 },
-                                {
-                                    "tid": "5274",
-                                    "name": "Best Seller"
-                                },
-                                {
-                                    "tid": "5275",
-                                    "name": "Recommended"
-                                }
-                            ],
-                            "pre_order": {
-                                "status": false,
-                                "date": null
+                                "type": "product",
+                                "shipment_date": null,
+                                "summary": "B",
+                                "tags": [
+                                    {
+                                        "tid": "31769",
+                                        "name": "cicilan"
+                                    },
+                                    {
+                                        "tid": "31767",
+                                        "name": "diskon"
+                                    },
+                                    {
+                                        "tid": "31768",
+                                        "name": "murah"
+                                    }
+                                ]
                             },
+                            "isproduct": true,
                             "type": "product",
-                            "shipment_date": null,
-                            "summary": "B",
-                            "tags": [
-                                {
-                                    "tid": "31769",
-                                    "name": "cicilan"
-                                },
-                                {
-                                    "tid": "31767",
-                                    "name": "diskon"
-                                },
-                                {
-                                    "tid": "31768",
-                                    "name": "murah"
-                                }
-                            ]
+                            "id": "138646"
                         },
-                        "isproduct": true,
-                        "type": "product",
-                        "id": "138646"
-                    },
-                    {
-                        "label": "Unique Number",
-                        "quantity": "1.00",
-                        "unit_price": "-722",
-                        "unit_price_currency": "IDR",
-                        "total_price": "-722",
-                        "total_price_currency": "IDR",
-                        "detail": [],
-                        "isproduct": false,
-                        "type": "custom_random",
-                        "id": "138647"
-                    },
-                    {
-                        "label": "JNT - EZ",
-                        "quantity": 1,
-                        "unit_price": 14000,
-                        "unit_price_currency": "IDR",
-                        "total_price": 14000,
-                        "total_price_currency": "IDR",
-                        "detail": [],
-                        "isproduct": false,
-                        "type": "shipping",
-                        "id": "138648"
-                    }
-                ],
-                "customer_billing": [],
-                "customer_shipping": [],
-                "order_subtotal": 103600,
-                "order_subtotal_currency": "IDR",
-                "product_category": [
-                    "discount",
-                    "book"
-                ]
+                        {
+                            "label": "Unique Number",
+                            "quantity": "1.00",
+                            "unit_price": "-722",
+                            "unit_price_currency": "IDR",
+                            "total_price": "-722",
+                            "total_price_currency": "IDR",
+                            "detail": [],
+                            "isproduct": false,
+                            "type": "custom_random",
+                            "id": "138647"
+                        },
+                        {
+                            "label": "JNT - EZ",
+                            "quantity": 1,
+                            "unit_price": 14000,
+                            "unit_price_currency": "IDR",
+                            "total_price": 14000,
+                            "total_price_currency": "IDR",
+                            "detail": [],
+                            "isproduct": false,
+                            "type": "shipping",
+                            "id": "138648"
+                        }
+                    ],
+                    "customer_billing": [],
+                    "customer_shipping": [],
+                    "order_subtotal": 103600,
+                    "order_subtotal_currency": "IDR",
+                    "product_category": [
+                        "discount",
+                        "book"
+                    ]
+                }
             }
-        }
 
 ### Shipping Calculate Cost [POST /api/shipping/cost]
 
@@ -3852,173 +3853,174 @@ BillionaireStore API Collection.
             }
 
 + Response 200 (application/json)
-        {
-            "code": 200,
-            "status": true,
-            "message": "Shipping",
-            "meta": [],
-            "data": {
-                "costs": [
-                    {
-                        "code": "jne",
-                        "name": "Jalur Nugraha Ekakurir (JNE)",
-                        "costs": [
-                            {
-                                "service": "JTR",
-                                "description": "",
-                                "cost": {
-                                    "value": "60000",
-                                    "etd": "",
-                                    "note": ""
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Shipping",
+                "meta": [],
+                "data": {
+                    "costs": [
+                        {
+                            "code": "jne",
+                            "name": "Jalur Nugraha Ekakurir (JNE)",
+                            "costs": [
+                                {
+                                    "service": "JTR",
+                                    "description": "",
+                                    "cost": {
+                                        "value": "60000",
+                                        "etd": "",
+                                        "note": ""
+                                    }
+                                },
+                                {
+                                    "service": "JTR250",
+                                    "description": "",
+                                    "cost": {
+                                        "value": "1200000",
+                                        "etd": "",
+                                        "note": ""
+                                    }
+                                },
+                                {
+                                    "service": "JTR<150",
+                                    "description": "",
+                                    "cost": {
+                                        "value": "1000000",
+                                        "etd": "",
+                                        "note": ""
+                                    }
+                                },
+                                {
+                                    "service": "JTR>250",
+                                    "description": "",
+                                    "cost": {
+                                        "value": "1350000",
+                                        "etd": "",
+                                        "note": ""
+                                    }
+                                },
+                                {
+                                    "service": "OKE15",
+                                    "description": "",
+                                    "cost": {
+                                        "value": "15000",
+                                        "etd": "7 HARI",
+                                        "note": ""
+                                    }
+                                },
+                                {
+                                    "service": "REG15",
+                                    "description": "",
+                                    "cost": {
+                                        "value": "17000",
+                                        "etd": "6 HARI",
+                                        "note": ""
+                                    }
                                 }
-                            },
-                            {
-                                "service": "JTR250",
-                                "description": "",
-                                "cost": {
-                                    "value": "1200000",
-                                    "etd": "",
-                                    "note": ""
+                            ]
+                        },
+                        {
+                            "code": "pos",
+                            "name": "POS Indonesia (POS)",
+                            "costs": [
+                                {
+                                    "service": "Paket Kilat Khusus",
+                                    "description": "Paket Kilat Khusus",
+                                    "cost": {
+                                        "value": 13000,
+                                        "etd": "72 JAM",
+                                        "note": ""
+                                    }
+                                },
+                                {
+                                    "service": "Paketpos Dangerous Goods",
+                                    "description": "Paketpos Dangerous Goods",
+                                    "cost": {
+                                        "value": 19000,
+                                        "etd": "5 HARI",
+                                        "note": ""
+                                    }
+                                },
+                                {
+                                    "service": "Paketpos Valuable Goods",
+                                    "description": "Paketpos Valuable Goods",
+                                    "cost": {
+                                        "value": 19000,
+                                        "etd": "5 HARI",
+                                        "note": ""
+                                    }
                                 }
-                            },
-                            {
-                                "service": "JTR<150",
-                                "description": "",
-                                "cost": {
-                                    "value": "1000000",
-                                    "etd": "",
-                                    "note": ""
-                                }
-                            },
-                            {
-                                "service": "JTR>250",
-                                "description": "",
-                                "cost": {
-                                    "value": "1350000",
-                                    "etd": "",
-                                    "note": ""
-                                }
-                            },
-                            {
-                                "service": "OKE15",
-                                "description": "",
-                                "cost": {
-                                    "value": "15000",
-                                    "etd": "7 HARI",
-                                    "note": ""
-                                }
-                            },
-                            {
-                                "service": "REG15",
-                                "description": "",
-                                "cost": {
-                                    "value": "17000",
-                                    "etd": "6 HARI",
-                                    "note": ""
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "code": "pos",
-                        "name": "POS Indonesia (POS)",
-                        "costs": [
-                            {
-                                "service": "Paket Kilat Khusus",
-                                "description": "Paket Kilat Khusus",
-                                "cost": {
-                                    "value": 13000,
-                                    "etd": "72 JAM",
-                                    "note": ""
-                                }
-                            },
-                            {
-                                "service": "Paketpos Dangerous Goods",
-                                "description": "Paketpos Dangerous Goods",
-                                "cost": {
-                                    "value": 19000,
-                                    "etd": "5 HARI",
-                                    "note": ""
-                                }
-                            },
-                            {
-                                "service": "Paketpos Valuable Goods",
-                                "description": "Paketpos Valuable Goods",
-                                "cost": {
-                                    "value": 19000,
-                                    "etd": "5 HARI",
-                                    "note": ""
-                                }
-                            }
-                        ]
+                            ]
+                        }
+                    ],
+                    "destination": {
+                        "subdistrict_id": "3301",
+                        "subdistrict_name": "Cibadak",
+                        "city_id": "232",
+                        "city": "Kabupaten Lebak",
+                        "province_id": "3",
+                        "province": "Banten",
+                        "tid": "27801"
                     }
-                ],
-                "destination": {
-                    "subdistrict_id": "3301",
-                    "subdistrict_name": "Cibadak",
-                    "city_id": "232",
-                    "city": "Kabupaten Lebak",
-                    "province_id": "3",
-                    "province": "Banten",
-                    "tid": "27801"
                 }
             }
-        }
 
 ## Testimonial Collection [/shipping]
-### Get Testimonial [POST /api/shipping]
+### Get Testimonial [GET /api/shipping]
 
 + Response 200 (application/json)
 
-        {
-            "code": 200,
-            "status": true,
-            "message": "Testimonial List",
-            "meta": {
-                "total": "6"
-            },
-            "data": [
-                {
-                    "title": "Rendi Saputra",
-                    "full_name": "Rendi Saputra",
-                    "company": "CEO Keke Busana",
-                    "body": "<p>Penjualan adalah nafas dari perusahaan. Tanpa PENJUALAN berarti KEMATIAN. Dunia bisnis harusbersyukur kepada Allah, atas hadirnya sosok Dewa Eka Prayoga yang mewakafkan dirinya untuk berfokus pada topik pengembangan penjualan. Ini buku wajib para penjual !</p>\n<p> </p>\n",
-                    "images": "http://bs.local/sites/default/files/rendi%20saputra.jpg"
+            {
+                "code": 200,
+                "status": true,
+                "message": "Testimonial List",
+                "meta": {
+                    "total": "6"
                 },
-                {
-                    "title": "Jamil Azzaini",
-                    "full_name": "Jamil Azzaini",
-                    "company": "Inspirator suksesMulia",
-                    "body": "<p>Ini buku \"<strong>Gendheng</strong>\" ditulis oleh anak muda \"<strong>Sableng</strong>\". Jangan baca buku ini bila anda ingin punya penghasilan normal. Buku ini cocok bagi yang ingin kaya mendadak tanpa pesugihan. Tips dan trik di buku ini sangat renyah dibaca dan mudah dijalankan. Cobalah!</p>\n",
-                    "images": "http://bs.local/sites/default/files/jamil%20azzaini.jpg"
-                },
-                {
-                    "title": "Merry Riana",
-                    "full_name": "Merry Riana",
-                    "company": "Motivator Wanita No.1 Di Indonesia & Asia - Tokoh Biografi Mega Best Seller \"Mimpi Sejuta Dollar\"",
-                    "body": "<p>Anda tidak akan pernah dapat membayangkan bagaimana seorang anak muda seperti <strong>Dewa Eka Prayoga</strong> bisa bangkit dari kegagalan finansialnya dan meraih penghasilan beratus-ratus juta rupiah setiap bulannya hanya dengan cara promosi dan berbisnis lewat kata-kata di media sosial.Ya,buku \"Easy Copywriting\" ini adalah salah satu buku yang harus anda miliki karena Anda bisa mencontek habis-habisan semua trik yang sudah ditulis oleh penulis untuk mendapatkan penghasilan ratusan juta-nya.....</p>\n",
-                    "images": "http://bs.local/sites/default/files/merry%20riana.jpg"
-                },
-                {
-                    "title": "Ippho Santosa",
-                    "full_name": "Ippho Santosa",
-                    "company": "Pendiri Khalifah Group",
-                    "body": "<p>Sesuai judulnya buku ini lugas &amp; to the point. Mestinya dijual dengan harga jutaan rupiah!</p>\n",
-                    "images": "http://bs.local/sites/default/files/ippo.jpg"
-                },
-                {
-                    "title": "Saptuari Sugiharto",
-                    "full_name": "Saptuari Sugiharto",
-                    "company": "Provokator Entrepreneur - Founder #SedekahRombongan",
-                    "body": "<p>Buku GENDENG! yang nulis Orang GENDENG! Bikin jualan makin sableeeng.Orderan terus dateng! Profitnya biar biar bayar utang biar gak puyeeng!</p>\n",
-                    "images": "http://bs.local/sites/default/files/Saptuari%20Sugiharto.jpg"
-                },
-                {
-                    "title": " Hendy Setiono",
-                    "full_name": "Hendy Setiono",
-                    "company": "Founder and Group CEO Baba Rafi Enterprise",
-                    "body": "<p>Extraordinary!!! itulah pertama kali yang saya rasakan ketika membaca buku ini. Dengan gaya bahasa yang mudah di cerna, ilmu yang diberikan sangat aplikatif dan terbukti Sakseeess....<br />\n </p>\n",
-                    "images": "http://bs.local/sites/default/files/hendy.jpg"
-                }
-            ]
-        }
+                "data": [
+                    {
+                        "title": "Rendi Saputra",
+                        "full_name": "Rendi Saputra",
+                        "company": "CEO Keke Busana",
+                        "body": "<p>Penjualan adalah nafas dari perusahaan. Tanpa PENJUALAN berarti KEMATIAN. Dunia bisnis harusbersyukur kepada Allah, atas hadirnya sosok Dewa Eka Prayoga yang mewakafkan dirinya untuk berfokus pada topik pengembangan penjualan. Ini buku wajib para penjual !</p>\n<p> </p>\n",
+                        "images": "http://bs.local/sites/default/files/rendi%20saputra.jpg"
+                    },
+                    {
+                        "title": "Jamil Azzaini",
+                        "full_name": "Jamil Azzaini",
+                        "company": "Inspirator suksesMulia",
+                        "body": "<p>Ini buku \"<strong>Gendheng</strong>\" ditulis oleh anak muda \"<strong>Sableng</strong>\". Jangan baca buku ini bila anda ingin punya penghasilan normal. Buku ini cocok bagi yang ingin kaya mendadak tanpa pesugihan. Tips dan trik di buku ini sangat renyah dibaca dan mudah dijalankan. Cobalah!</p>\n",
+                        "images": "http://bs.local/sites/default/files/jamil%20azzaini.jpg"
+                    },
+                    {
+                        "title": "Merry Riana",
+                        "full_name": "Merry Riana",
+                        "company": "Motivator Wanita No.1 Di Indonesia & Asia - Tokoh Biografi Mega Best Seller \"Mimpi Sejuta Dollar\"",
+                        "body": "<p>Anda tidak akan pernah dapat membayangkan bagaimana seorang anak muda seperti <strong>Dewa Eka Prayoga</strong> bisa bangkit dari kegagalan finansialnya dan meraih penghasilan beratus-ratus juta rupiah setiap bulannya hanya dengan cara promosi dan berbisnis lewat kata-kata di media sosial.Ya,buku \"Easy Copywriting\" ini adalah salah satu buku yang harus anda miliki karena Anda bisa mencontek habis-habisan semua trik yang sudah ditulis oleh penulis untuk mendapatkan penghasilan ratusan juta-nya.....</p>\n",
+                        "images": "http://bs.local/sites/default/files/merry%20riana.jpg"
+                    },
+                    {
+                        "title": "Ippho Santosa",
+                        "full_name": "Ippho Santosa",
+                        "company": "Pendiri Khalifah Group",
+                        "body": "<p>Sesuai judulnya buku ini lugas &amp; to the point. Mestinya dijual dengan harga jutaan rupiah!</p>\n",
+                        "images": "http://bs.local/sites/default/files/ippo.jpg"
+                    },
+                    {
+                        "title": "Saptuari Sugiharto",
+                        "full_name": "Saptuari Sugiharto",
+                        "company": "Provokator Entrepreneur - Founder #SedekahRombongan",
+                        "body": "<p>Buku GENDENG! yang nulis Orang GENDENG! Bikin jualan makin sableeeng.Orderan terus dateng! Profitnya biar biar bayar utang biar gak puyeeng!</p>\n",
+                        "images": "http://bs.local/sites/default/files/Saptuari%20Sugiharto.jpg"
+                    },
+                    {
+                        "title": " Hendy Setiono",
+                        "full_name": "Hendy Setiono",
+                        "company": "Founder and Group CEO Baba Rafi Enterprise",
+                        "body": "<p>Extraordinary!!! itulah pertama kali yang saya rasakan ketika membaca buku ini. Dengan gaya bahasa yang mudah di cerna, ilmu yang diberikan sangat aplikatif dan terbukti Sakseeess....<br />\n </p>\n",
+                        "images": "http://bs.local/sites/default/files/hendy.jpg"
+                    }
+                ]
+            }
