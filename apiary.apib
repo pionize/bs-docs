@@ -3752,6 +3752,74 @@ BillionaireStore API Collection.
                     }
                 ]
             }
+## Product Review Collection [/product_review]
+### Get Product Review [POST /api/product_review/{product_id}{?page}{?pagesize}]
+
++ Parameters
+    + product_id: 62 (required, number)
+    + page: 1 (optional, number)
+    + pagesize: 10 (optional, number)
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Product Review",
+                "meta": {
+                    "total": 6
+                },
+                "data": [
+                    {
+                        "title": "test 1",
+                        "message": "<p>test 1</p>\r\n",
+                        "full_name": "ongi",
+                        "image": "http://api.bs.labs.skyshi.com/sites/default/files/styles/media_thumbnail/public/WhatsApp%20Image%202017-11-27%20at%2023.44.23.jpeg?itok=qxkwwq-6",
+                        "rating": 5,
+                        "created": "1512525240"
+                    },
+                    {
+                        "title": "test2",
+                        "message": "<p>test2</p>\r\n",
+                        "full_name": "andrew",
+                        "image": "http://api.bs.labs.skyshi.com/sites/default/files/styles/media_thumbnail/public/Screen%20Shot%202017-11-30%20at%2010.52.19.png?itok=ecfoXXuO",
+                        "rating": 2,
+                        "created": "1512525240"
+                    },
+                    {
+                        "title": "test3",
+                        "message": "<p>test3</p>\r\n",
+                        "full_name": "test3",
+                        "image": "http://api.bs.labs.skyshi.com/sites/default/files/styles/media_thumbnail/public?itok=2n9v3InB",
+                        "rating": 3,
+                        "created": "1512622330"
+                    },
+                    {
+                        "title": "asik asik jos",
+                        "message": "<p>asik asik jos</p>\r\n",
+                        "full_name": "Andreas Oyes",
+                        "image": "http://api.bs.labs.skyshi.com/sites/default/files/styles/media_thumbnail/public/dummy-review.jpg?itok=-0nfSS-2",
+                        "rating": 4,
+                        "created": "1512697984"
+                    },
+                    {
+                        "title": "asieawae daadada",
+                        "message": "<p>asieawae daadada</p>\r\n",
+                        "full_name": "Hendy Setiono",
+                        "image": "http://api.bs.labs.skyshi.com/sites/default/files/styles/media_thumbnail/public/dummy-review_0.jpg?itok=uRjjn2F1",
+                        "rating": 4,
+                        "created": "1512698746"
+                    },
+                    {
+                        "title": "Lorem ipsum dolor sit amet,",
+                        "message": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>\r\n",
+                        "full_name": "Joko Widodo",
+                        "image": "http://api.bs.labs.skyshi.com/sites/default/files/styles/media_thumbnail/public/dummy-review_1.jpg?itok=k7g2TF7Y",
+                        "rating": 2,
+                        "created": "1512698910"
+                    }
+                ]
+            }
 
 ## Shipping Collection [/shipping]
 ### Shipping Apply [POST /api/shipping]
