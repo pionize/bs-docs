@@ -3151,9 +3151,18 @@ BillionaireStore API Collection.
     + page: 1 (optional, number)
     + pagesize: 10 (optional, number)
     + title: `30 Hari Jago Jualan` (optional, string)
-    + category: 2 (optional, string) ...category tid, for multiple id, use (;) 2;5272
-    + event: 5276 (optional, string) ...event tid, for multiple id, use (;) 2;5276
-    + price: 0:117000 (optional, string) ...price range
+    + category: 2 (optional, string) ... 
+    
+        category tid, for multiple id, use (;) 2;5272
+        
+    + event: 5276 (optional, string) ... 
+    
+        event tid, for multiple id, use (;) 2;5276
+        
+    + price: 0:117000 (optional, string) ... 
+    
+        price range
+        
     + sort (optional, string)
 
         + Values:
@@ -3166,11 +3175,26 @@ BillionaireStore API Collection.
             + `title:DESC`
             + `title:ASC`
         
-    + product_id: 1 (optional, string) ...product id, for multiple id, use (;) 1;36
-    + not_product_id: 1 (optional, string) ...product id, for multiple id, use (;) 1;36
-    + status: 1 (optional, string) ...1=published,0=not published
-    + tag: 2 (optional, string) ...tag tid, for multiple id, use (;) 2;5272
-    + product_status: 2 (optional, string) ...product status tid, for multiple id, use (;) 2;5272
+    + product_id: 1 (optional, string) ...
+    
+        product id, for multiple id, use (;) 1;36
+        
+    + not_product_id: 1 (optional, string) ...
+    
+        product id, for multiple id, use (;) 1;36
+        
+    + status: 1 (optional, string) ...
+    
+        1=published,0=not published
+        
+    + tag: 2 (optional, string) ...
+    
+        tag tid, for multiple id, use (;) 2;5272
+    
+    + product_status: 2 (optional, string) ...
+    
+        product status tid, for multiple id, use (;) 2;5272
+        
     + program (optional, string)
 
         + Values:
@@ -3368,8 +3392,13 @@ BillionaireStore API Collection.
 
 + Parameters
     + id: 1 (required, number)
-    + referral: `andreas@skyshi.com` (optional, string) ...log the referral user
-    + referrer: `bs.labs.skyshi.com` (optional, string) ...log the referral site
+    + referral: `andreas@skyshi.com` (optional, string) ...
+    
+        log the referral user
+        
+    + referrer: `bs.labs.skyshi.com` (optional, string) ...
+    
+        log the referral site
     
 + Response 200 (application/json)
 
@@ -3533,8 +3562,13 @@ BillionaireStore API Collection.
 ### Get Product Category [GET /api/product/category{?product_load}{?status}]
 
 + Parameters
-    + product_load= 0 (optional, number) ...load product data if the value is 1
-    + status=1 (optional, number) ...filter loaded product with status
+    + product_load= 0 (optional, number) ...
+    
+        load product data if the value is 1
+        
+    + status=1 (optional, number) ...
+    
+        filter loaded product with status
 
 + Response 200 (application/json)
 
