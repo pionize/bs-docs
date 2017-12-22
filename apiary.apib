@@ -1908,7 +1908,7 @@ BillionaireStore API Collection.
 ### Get All Material [GET /api/material{?page}{?pagesize}{?category}]
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
     + category: kurikulum (optional, string)
     
@@ -2517,7 +2517,7 @@ BillionaireStore API Collection.
 ### Get All Order (For Reseller) [GET /api/order{?page}{?pagesize}{?order_type}{?date_start}{?date_end}{?status}{?program}{?product_type}{?invoice_number}]
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
     + date_start: `2017-12-30` (optional, string)
     + date_end: `2017-12-30` (optional, string)
@@ -3148,7 +3148,7 @@ BillionaireStore API Collection.
 ### Get All Products [GET /api/product{?page}{?pagesize}{?title}{?category}{?event}{?price}{?sort}{?product_id}{?not_product_id}{?status}{?tag}{?product_status}{?program}]
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
     + title: `30 Hari Jago Jualan` (optional, string)
     + category: 2 (optional, string) ... 
@@ -3615,7 +3615,7 @@ BillionaireStore API Collection.
             Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
     + title: `30 Hari Jago Jualan` (optional, string)
     + type (optional, string)
@@ -3810,7 +3810,7 @@ BillionaireStore API Collection.
 
 + Parameters
     + product_id: 62 (required, number)
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
 
 + Response 200 (application/json)
@@ -4207,7 +4207,7 @@ BillionaireStore API Collection.
 ### Get All Banner [GET /api/banner{?page}{?pagesize}{?type}{?location}{?placement}]
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
     + type: `slider` (optional, string)
     + location: `home` (optional, string)
@@ -4314,7 +4314,7 @@ BillionaireStore API Collection.
 ### Get All Event [GET /api/event{?page}{?pagesize}{?sort}]
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
     + sort (optional, string)
 
@@ -4525,7 +4525,7 @@ BillionaireStore API Collection.
 ### Get All Tutorial [GET /api/tutorial{?page}{?pagesize}]
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
 
 + Response 200 (application/json)
@@ -4621,7 +4621,7 @@ BillionaireStore API Collection.
 ### List Leader Board [GET /api/leaderboard{?page}{?pagesize}{?product_id}]
 
 + Parameters
-    + page: 1 (optional, number)
+    + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
     + product_id: 1 (optional, number)
 
