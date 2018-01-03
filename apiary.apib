@@ -31,6 +31,7 @@ BillionaireStore API Collection.
                     "picture": null,
                     "created": "1497410500",
                     "access": "1513588483",
+                    "member_expired": "1543597200",
                     "balance": "1596000",
                     "referral_token": "andreasskyshi",
                     "main": {
@@ -128,6 +129,7 @@ BillionaireStore API Collection.
                     "picture": null,
                     "created": "1497410500",
                     "access": "1513651750",
+                    "member_expired": "1543597200",
                     "balance": "1596000",
                     "referral_token": "andreasskyshi",
                     "main": {
@@ -219,6 +221,7 @@ BillionaireStore API Collection.
                     "picture": null,
                     "created": "1497410500",
                     "access": "1513651750",
+                    "member_expired": "1543597200",
                     "balance": "1596000",
                     "referral_token": "andreasskyshi",
                     "main": {
@@ -372,6 +375,7 @@ BillionaireStore API Collection.
                     "picture": null,
                     "created": "1497410500",
                     "access": "1513654608",
+                    "member_expired": "1543597200",
                     "balance": "1596000",
                     "referral_token": "andreasskyshi",
                     "main": {
@@ -3143,9 +3147,30 @@ BillionaireStore API Collection.
                 ]
             }
             
+### Get Private Group By ID [GET /api/private-group/{id}]
+
++ Parameters
+    
+    + id: 58 (number, required)
+            
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Private Group data.",
+            "meta": [],
+            "data": {
+                "id": "58",
+                "title": "Grup facebook Excellent Team Reseller Billionaire Store",
+                "body": "<p>Untuk join grup facebook <em><strong>Excellent Team Reseller Billionaire Store </strong></em>yang berisikann tentang step by step nya yang harus di lalukan para reseller billionaire store.</p>\r\n\r\n<p>Grup ini kami buat <em><strong>SECRET</strong></em> alias <em><strong>RAHASIA j</strong></em>adi yang mau gabung harus berteman dulu dengan Jaya ramadhan di facebook , kenapa begitu ??? , memang sudah peraturan dari facebook nya jadi jangan di tanyakan lagi ya dan ikuti saja ya langkah langkah di bawah ini ...<br />\r\n<br />\r\n- Teman-teman harus ADD dulu Jaya ramadhan di facebook bisa klik link ini untuk langsung meluncur ke profil jaya ramadhan</p>\r\n\r\n<p>- lanjutkan dengan<strong> kirim pesan atau I</strong><em><strong>NBOX </strong></em>ke Jaya ramadhan dengan format ( <em><strong>SAYA SERIUS INGIN JADI RESELLER SUKSES BILLIONAIRE STORE</strong></em> )</p>\r\n\r\n<p>- kalau sudah melakukan hal dua di atas maka saya akan cocokan data teman-teman dengn data seluruh reseller yang ada di saya</p>\r\n\r\n<p><em><strong>- </strong></em>jika sudah di terima perteman nya saya akan masukan teman-teman ke dalam grup facebook <em><strong>Excellent Team Reseller Billionaire Store</strong></em></p>\r\n\r\n<p><em><strong>- nah</strong></em>&nbsp;kalau sudah masuk grup tersebut teman-teman sebelum ubek-ubek grup nya , Silahkan untuk terlebihdahulu teman-teman harus baca Tampilan yang disematakan ( <strong><em>VIEW PINNED POST</em></strong> ) di baca sampai beres kecuali teman-teman mau rugi untuk ketinggalan informasi</p>\r\n",
+                "url": "https://www.facebook.com/jayaramadhanbs"
+            }
+        }
+
 ## Product Collection [/product]
 
-### Get All Products [GET /api/product{?page}{?pagesize}{?title}{?category}{?event}{?price}{?sort}{?product_id}{?not_product_id}{?status}{?tag}{?product_status}{?program}]
+### Get All Products [GET /api/product{?page}{?pagesize}{?title}{?category}{?event}{?price}{?sort}{?product_id}{?not_product_id}{?status}{?tag}{?product_status}{?program}{?shared}]
 
 + Parameters
     + page: 0 (optional, number)
@@ -3201,6 +3226,10 @@ BillionaireStore API Collection.
             + `ready`
             + `promo`
             + `preorder`
+            
+    + shared (optional, number)
+    
+        shared=1 if only get products which already get link, this will add `click` data in each product result
 
 + Response 200 (application/json)
 
@@ -3602,177 +3631,6 @@ BillionaireStore API Collection.
                     "tid": "16697",
                     "name": "Coming Soon",
                     "product": []
-                }
-            ]
-        }
-
-### Get Product Click Statistic [GET /api/product_statistic{?page}{?pagesize}{?title}{?type}]
-> Need to updated after revamp
-
-+ Request (application/json)
-    + Headers
-
-            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
-
-+ Parameters
-    + page: 0 (optional, number)
-    + pagesize: 10 (optional, number)
-    + title: `30 Hari Jago Jualan` (optional, string)
-    + type (optional, string)
-
-        + Values
-            + `preorder`
-            + `regular`
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product",
-            "meta": {
-                "total": 39
-            },
-            "data": [
-                {
-                    "product": {
-                        "product_id": "1",
-                        "name": "30 Hari Jago Jualan",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/30%20HJJ%20270X360.png?itok=sNwEimrl"
-                        ]
-                    },
-                    "commission": 69000,
-                    "counter": 131,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "26",
-                        "name": "Tembus Omset 100 Juta Modal Blackberry",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/710826to100juta-mock_0.png?itok=oWZ4anMC"
-                        ]
-                    },
-                    "commission": 50000,
-                    "counter": 2,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "27",
-                        "name": "Workshop Jago FB Ads",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/Kaos-distro-Solo-Kaos-dari-awam-menjadi-jutawan-navi-900x784.jpg?itok=eYTU4W9A"
-                        ]
-                    },
-                    "commission": 57000,
-                    "counter": 10,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "28",
-                        "name": "Kembali Ke Titik Nol",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/KKTN%20270x360.png?itok=FGbIfnkY"
-                        ]
-                    },
-                    "commission": 39000,
-                    "counter": 6,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "29",
-                        "name": "Line Marketing",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/474306line_0.png?itok=Na-hyXvE"
-                        ]
-                    },
-                    "commission": 50000,
-                    "counter": 0,
-                    "referral_token": "andreasskyshi",
-                    "status": "0",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "3",
-                        "name": "Dongkrak Omset Milyaran dengan Tim Penjualan",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/DOM%20270X360_0.png?itok=xuL6ML_P"
-                        ]
-                    },
-                    "commission": 150000,
-                    "counter": 1,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "2",
-                        "name": "Berani Jadi Taubaters",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/BJT.png?itok=yCI7hsK8"
-                        ]
-                    },
-                    "commission": 37000,
-                    "counter": 1,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "30",
-                        "name": "Dijamin Penghasilan 10 Juta per bulan",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/DP10JT.png?itok=r1p6RjcS"
-                        ]
-                    },
-                    "commission": 50000,
-                    "counter": 0,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "31",
-                        "name": "Gara-Gara Facebook",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/GGF%20270X360.png?itok=lAu6Hgrd"
-                        ]
-                    },
-                    "commission": 55000,
-                    "counter": 1,
-                    "referral_token": "andreasskyshi",
-                    "status": "1",
-                    "type": "Regular"
-                },
-                {
-                    "product": {
-                        "product_id": "32",
-                        "name": "How to Build The Business Team",
-                        "images": [
-                            "http://bs.local/sites/default/files/styles/product_image/public/products/613651photo954330291834562542_0.jpg?itok=O8okt4vg"
-                        ]
-                    },
-                    "commission": 40000,
-                    "counter": 0,
-                    "referral_token": "andreasskyshi",
-                    "status": "0",
-                    "type": "Regular"
                 }
             ]
         }
