@@ -3172,6 +3172,8 @@ BillionaireStore API Collection.
 
 ### Get All Products [GET /api/product{?page}{?pagesize}{?title}{?category}{?event}{?price}{?sort}{?product_id}{?not_product_id}{?status}{?tag}{?product_status}{?program}{?shared}]
 
+To get product click statistic, send the request using header token and add share=1 in url parameter
+
 + Parameters
     + page: 0 (optional, number)
     + pagesize: 10 (optional, number)
@@ -3229,7 +3231,7 @@ BillionaireStore API Collection.
             
     + shared (optional, number)
     
-        shared=1 if only get products which already get link, this will add `click` data in each product result
+        shared=1 if only header token is sent and get products which already get link, this will add `click` data in each product result
 
 + Response 200 (application/json)
 
@@ -3633,6 +3635,25 @@ BillionaireStore API Collection.
                     "product": []
                 }
             ]
+        }
+        
+### Mark Product as Shared [POST /api/product/share]
+
++ Request (application/json)
+    + Body
+
+            {
+              "product_id" : 61
+            }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Get Link Success",
+            "meta": {},
+            "data": []
         }
 
 ### Get Product Click Statistic [GET /api/product_statistic{?page}{?pagesize}{?title}{?type}]
