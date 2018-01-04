@@ -3563,7 +3563,7 @@ BillionaireStore API Collection.
             }
         }
 
-### Get Product Category [GET /api/product/category]
+### Get Product Category [POST /api/product/category]
 
 + Response 200 (application/json)
 
@@ -3588,7 +3588,7 @@ BillionaireStore API Collection.
             ]
         }
 
-### Get Product Category [GET /api/product/category{?product_load}{?status}]
+### Get Product Event [POST /api/product/event{?product_load}{?status}]
 
 + Parameters
     + product_load= 0 (optional, number) ...
@@ -3635,6 +3635,186 @@ BillionaireStore API Collection.
             ]
         }
 
+### Get Product Click Statistic [GET /api/product_statistic{?page}{?pagesize}{?title}{?type}]
+
++ Request (application/json)
+    + Headers
+
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
++ Parameters
+    + page: 0 (optional, number)
+    + pagesize: 10 (optional, number)
+    + title (optional, string)
+    + type (optional, string)
+    
+        + Values
+            + `preorder`
+            + `regular`
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Product",
+                "meta": {
+                    "total": 39
+                },
+                "data": [
+                    {
+                        "product": {
+                            "product_id": "1",
+                            "name": "30 Hari Jago Jualan",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/30%20HJJ%20270X360.png?itok=sNwEimrl"
+                            ]
+                        },
+                        "commission": 69000,
+                        "counter": 131,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": "Discount 60%"
+                    },
+                    {
+                        "product": {
+                            "product_id": "26",
+                            "name": "Tembus Omset 100 Juta Modal Blackberry",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/710826to100juta-mock_0.png?itok=oWZ4anMC"
+                            ]
+                        },
+                        "commission": 50000,
+                        "counter": 2,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    },
+                    {
+                        "product": {
+                            "product_id": "27",
+                            "name": "Workshop Jago FB Ads",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/Kaos-distro-Solo-Kaos-dari-awam-menjadi-jutawan-navi-900x784.jpg?itok=eYTU4W9A"
+                            ]
+                        },
+                        "commission": 57000,
+                        "counter": 10,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": null
+                    },
+                    {
+                        "product": {
+                            "product_id": "28",
+                            "name": "Kembali Ke Titik Nol",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/KKTN%20270x360.png?itok=FGbIfnkY"
+                            ]
+                        },
+                        "commission": 39000,
+                        "counter": 6,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    },
+                    {
+                        "product": {
+                            "product_id": "29",
+                            "name": "Line Marketing",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/474306line_0.png?itok=Na-hyXvE"
+                            ]
+                        },
+                        "commission": 50000,
+                        "counter": 0,
+                        "referral_token": "andreasskyshi",
+                        "status": "0",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    },
+                    {
+                        "product": {
+                            "product_id": "3",
+                            "name": "Dongkrak Omset Milyaran dengan Tim Penjualan",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/DOM%20270X360_0.png?itok=xuL6ML_P"
+                            ]
+                        },
+                        "commission": 150000,
+                        "counter": 1,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    },
+                    {
+                        "product": {
+                            "product_id": "2",
+                            "name": "Berani Jadi Taubaters",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/BJT.png?itok=yCI7hsK8"
+                            ]
+                        },
+                        "commission": 37000,
+                        "counter": 1,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    },
+                    {
+                        "product": {
+                            "product_id": "30",
+                            "name": "Dijamin Penghasilan 10 Juta per bulan",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/DP10JT.png?itok=r1p6RjcS"
+                            ]
+                        },
+                        "commission": 50000,
+                        "counter": 0,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    },
+                    {
+                        "product": {
+                            "product_id": "31",
+                            "name": "Gara-Gara Facebook",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/GGF%20270X360.png?itok=lAu6Hgrd"
+                            ]
+                        },
+                        "commission": 55000,
+                        "counter": 1,
+                        "referral_token": "andreasskyshi",
+                        "status": "1",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    },
+                    {
+                        "product": {
+                            "product_id": "32",
+                            "name": "How to Build The Business Team",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/613651photo954330291834562542_0.jpg?itok=O8okt4vg"
+                            ]
+                        },
+                        "commission": 40000,
+                        "counter": 0,
+                        "referral_token": "andreasskyshi",
+                        "status": "0",
+                        "type": "Regular",
+                        "program": "Ready Stock"
+                    }
+                ]
+            }
+
 ### Get Product Click Statistic Detail [GET /api/product_statistic/{product_id}]
 
 + Request (application/json)
@@ -3663,6 +3843,7 @@ BillionaireStore API Collection.
                     }
                 ]
             }
+            
 ## Product Review Collection [/product_review]
 ### Get Product Review [GET /api/product_review/{product_id}{?page}{?pagesize}]
 
