@@ -3170,7 +3170,7 @@ BillionaireStore API Collection.
 
 ## Product Collection [/product]
 
-### Get All Products [GET /api/product{?page}{?pagesize}{?title}{?category}{?event}{?price}{?sort}{?product_id}{?not_product_id}{?status}{?tag}{?product_status}{?program}{?shared}]
+### Get All Products [GET /api/product{?page}{?pagesize}{?title}{?category}{?event}{?price}{?sort}{?product_id}{?not_product_id}{?status}{?tag}{?product_status}{?program}{?shared}{?product_type}]
 
 To get product click statistic, send the request using header token and add share=1 in url parameter
 
@@ -3221,7 +3221,7 @@ To get product click statistic, send the request using header token and add shar
     + product_status: 2 (optional, string) ...
     
         product status tid, for multiple id, use (;) 2;5272
-        
+
     + program (optional, string)
 
         + Values:
@@ -3232,6 +3232,12 @@ To get product click statistic, send the request using header token and add shar
     + shared (optional, number)
     
         shared=1 if only header token is sent and get products which already get link, this will add `click` data in each product result
+
+    + product_type (optional, string)
+
+        + Values:
+            + `reseller_product`
+            + `product`
 
 + Response 200 (application/json)
 
