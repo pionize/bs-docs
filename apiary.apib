@@ -1797,10 +1797,12 @@ BillionaireStore API Collection.
     + type (optional, string)
 
         + Values
-            + `regular`
-            + `event`
-            + `digital`
-            + `book`
+            + `Book`
+            + `Digital`
+            + `Event`
+            + `Merchandise`
+            + `Paket`
+            + `Komunitas`
             
 + Response 200 (application/json)
 
@@ -2518,7 +2520,7 @@ BillionaireStore API Collection.
             }
         }
 
-### Get All Order (For Reseller) [GET /api/order{?page}{?pagesize}{?order_type}{?date_start}{?date_end}{?status}{?program}{?product_type}{?invoice_number}]
+### Get All Order (For Reseller) [GET /api/order{?page}{?pagesize}{?order_type}{?date_start}{?date_end}{?status}{?program}{?product_type}{?invoice_number}{?reseller_name}]
 
 + Parameters
     + page: 0 (optional, number)
@@ -2526,7 +2528,7 @@ BillionaireStore API Collection.
     + date_start: `2017-12-30` (optional, string)
     + date_end: `2017-12-30` (optional, string)
     + status (optional, string)
-    
+
         + Values
             + `pending`
             + `expired`
@@ -2557,6 +2559,9 @@ BillionaireStore API Collection.
             + `community`
             + `bulk`
             + `abroad`
+    
+    + invoice_number (optional, string)
+    + reseller_name (optional, string)
 
 + Request (application/json)
     + Headers
@@ -4771,3 +4776,657 @@ To get product click statistic, send the request using header token and add shar
                     }
                 ]
             }
+            
+## Bulk Order Collection [/bulk-order]
+### Download Bulk Order XLS Template [POST /api/bulk-order/template]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "File",
+                "meta": {},
+                "data": [
+                    "http://api.bs.labs.skyshi.com/sites/default/files/bulk-order/5994.xlsx"
+                ]
+            }
+    
+### Upload Bulk Order [POST /api/bulk-order/upload]
+
++ Request
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+    
+            Content-Type: multipart/form-data; boundary=BOUNDARY
+
+    + Body
+
+            --BOUNDARY
+            content-disposition: form-data; name="order"; filename="$filename"
+            Content-Type: $mimetype
+            Content-Transfer-Encoding: binary
+            
+            $binarydata
+            --BOUNDARY--
+            
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "File",
+                "meta": {},
+                "data": {
+                    "id": "93206",
+                    "name": "5994-1516845979.xlsx",
+                    "file_id": "19024"
+                }
+            }
+            
+### Get Bulk Order Data (Admin CS) [GET /api/bulk-order/{id}]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
++ Parameters
+    + id: 93204 (string, required)
+    
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Order data",
+                "meta": {},
+                "data": {
+                    "id": "93206",
+                    "uid": "5994",
+                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516845979.xlsx",
+                    "reseller": {
+                        "name": "Test Skyshi",
+                        "email": "andreas@skyshi.com",
+                        "phone": "08562905595",
+                        "address": "Jalan Sugeng Jeroni 69",
+                        "location": {
+                            "province": {
+                                "province_id": "9",
+                                "name": "Jawa Barat"
+                            },
+                            "subdistrict": {
+                                "subdistrict_id": "1409",
+                                "name": "Cianjur"
+                            },
+                            "city": {
+                                "city_id": "104",
+                                "name": "Kabupaten Cianjur"
+                            }
+                        },
+                        "postal_code": "55251"
+                    },
+                    "orders": [
+                        {
+                            "shipping": {
+                                "name": "Bung Billy",
+                                "email": "mail@example.com",
+                                "phone": "0800000000",
+                                "address": "Jl. Sukamaju, Bandung",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5783",
+                                        "name": "Godean"
+                                    }
+                                },
+                                "postal_code": 55111
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "Yr1kq"
+                        },
+                        {
+                            "shipping": {
+                                "name": "Andrew Junior",
+                                "email": "andrew@skyshi.com",
+                                "phone": 8562905595,
+                                "address": "Jl. Sugeng Jeroni 69",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5781",
+                                        "name": "Depok"
+                                    }
+                                },
+                                "postal_code": 55251
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "PiFeE"
+                        }
+                    ]
+                }
+            }
+            
+### Bulk Order Checkout (Admin CS) [POST /api/bulk-order]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
+    + Body
+
+            {
+                "bulk_id": 93206,
+                "random_number": "PiFeE",
+                "products": [{
+                    "product_id": 1,
+                    "quantity": 1
+                }],
+                "shipping": {
+                    "courier": "jne",
+                    "service": "REG15",
+                    "fullname": "Test Skyshi",
+                    "address": "Jalan Sugeng Jeroni 69",
+                    "subdistrict": "3301",
+                    "country": "Indonesia",
+                    "phone_no": "08562905595",
+                    "email": "scorpyku+testnih@gmail.com",
+                    "username": "andreasskyshi",
+                    "password": "andrew123%"
+                },
+                "billing": {
+                    "fullname": "Test Skyshi",
+                    "subdistrict": "3301",
+                    "address": "Jalan Sugeng Jeroni 69",
+                    "country": "Indonesia",
+                    "phone_no": "08562905595",
+                    "postal_code" : "55251",
+                    "email": "andreas@skyshi.com"
+                }
+            }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Order",
+            "meta": [],
+            "data": {
+                "order_id": "49643",
+                "invoice_number": "RS121749643",
+                "shipping_number": null,
+                "order_type": "Dropship",
+                "status": "pending",
+                "transfer_nominal": 0,
+                "created": 1513669866,
+                "changed": 1513669866,
+                "order_total": 198090,
+                "order_total_currency": "IDR",
+                "line_items": [
+                    {
+                        "label": "30HariJagoJualan-1",
+                        "quantity": "1.00",
+                        "unit_price": "103600",
+                        "unit_price_currency": "IDR",
+                        "total_price": "103600",
+                        "total_price_currency": "IDR",
+                        "detail": {
+                            "uid": "1",
+                            "product_id": "1",
+                            "sku": "30HariJagoJualan-1",
+                            "title": "30 Hari Jago Jualan",
+                            "created": "1489985080",
+                            "changed": 1513669866,
+                            "rating": 0,
+                            "price": 259000,
+                            "price_currency": "IDR",
+                            "sell_price": 103600,
+                            "sell_price_currency": "IDR",
+                            "stock": 290,
+                            "weight": "320.00000 g",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/30%20HJJ%20270X360.png?itok=sNwEimrl"
+                            ],
+                            "program": "Discount 60%",
+                            "body": "<div class=\"desc-item\"><a aria-expanded=\"true\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-1\">Capter 1</a></p>\n<div class=\"desc-content collapse in\" id=\"capter-1\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-2\">Capter 2</a></p>\n<div class=\"desc-content collapse\" id=\"capter-2\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-3\">Capter 3</a></p>\n<div class=\"desc-content collapse\" id=\"capter-3\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-4\">Capter 4</a></p>\n<div class=\"desc-content collapse\" id=\"capter-4\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n<div class=\"desc-item\"><a aria-expanded=\"false\" class=\"link-desc\" data-toggle=\"collapse\" href=\"#capter-5\">Capter 5</a></p>\n<div class=\"desc-content collapse\" id=\"capter-5\">\n<ul class=\"desc-list\">\n<li>You don’t need to have a full time ecommerce business to earn a little extra money</li>\n<li>The modern world is in a continuous movement and people everywhere are</li>\n<li>After ten minutes with Ed Tettemer in the offices of the agency he founded</li>\n<li>How to Season and Care for Your Cast Iron Cookware You have a skillet that came from your mom, and before that your grandma, and has now fallen into your hands.</li>\n</ul>\n</div>\n</div>\n",
+                            "categories": [
+                                {
+                                    "tid": "2",
+                                    "name": "Book & DVD"
+                                }
+                            ],
+                            "event": [
+                                {
+                                    "tid": "5273",
+                                    "name": "Promo"
+                                },
+                                {
+                                    "tid": "5274",
+                                    "name": "Best Seller"
+                                },
+                                {
+                                    "tid": "5275",
+                                    "name": "Recommended"
+                                }
+                            ],
+                            "pre_order": {
+                                "status": false,
+                                "date": null
+                            },
+                            "type": "product",
+                            "shipment_date": null,
+                            "summary": "B",
+                            "tags": [
+                                {
+                                    "tid": "31769",
+                                    "name": "cicilan"
+                                },
+                                {
+                                    "tid": "31767",
+                                    "name": "diskon"
+                                },
+                                {
+                                    "tid": "31768",
+                                    "name": "murah"
+                                }
+                            ]
+                        },
+                        "isproduct": true,
+                        "type": "product",
+                        "id": "138639"
+                    },
+                    {
+                        "label": "ProductTest-63",
+                        "quantity": "1.00",
+                        "unit_price": "265000",
+                        "unit_price_currency": "IDR",
+                        "total_price": "265000",
+                        "total_price_currency": "IDR",
+                        "detail": {
+                            "uid": "1",
+                            "product_id": "63",
+                            "sku": "ProductTest-63",
+                            "title": "Product Test",
+                            "created": "1507271175",
+                            "changed": 1513669866,
+                            "rating": 0,
+                            "price": 265000,
+                            "price_currency": "IDR",
+                            "sell_price": "265000",
+                            "sell_price_currency": "IDR",
+                            "stock": 99,
+                            "weight": "300.00000 g",
+                            "images": [
+                                "http://bs.local/sites/default/files/styles/product_image/public/products/PRODUCT%20TEST.png?itok=rTMAte8a"
+                            ],
+                            "program": "Pre-Order",
+                            "body": null,
+                            "categories": [
+                                {
+                                    "tid": "2",
+                                    "name": "Book & DVD"
+                                }
+                            ],
+                            "event": [
+                                {
+                                    "tid": "5276",
+                                    "name": "Terbaru"
+                                }
+                            ],
+                            "pre_order": {
+                                "status": true,
+                                "date": "1511152200"
+                            },
+                            "type": "product",
+                            "shipment_date": "1507222800",
+                            "summary": null,
+                            "tags": []
+                        },
+                        "isproduct": true,
+                        "type": "product",
+                        "id": "138640"
+                    },
+                    {
+                        "label": "Unique Number",
+                        "quantity": "1.00",
+                        "unit_price": "-210",
+                        "unit_price_currency": "IDR",
+                        "total_price": "-210",
+                        "total_price_currency": "IDR",
+                        "detail": [],
+                        "isproduct": false,
+                        "type": "custom_random",
+                        "id": "138641"
+                    },
+                    {
+                        "label": "",
+                        "quantity": "1.00",
+                        "unit_price": "-184300",
+                        "unit_price_currency": "IDR",
+                        "total_price": "-184300",
+                        "total_price_currency": "IDR",
+                        "detail": [],
+                        "isproduct": false,
+                        "type": "commerce_discount",
+                        "id": "138644"
+                    },
+                    {
+                        "label": "JNT - EZ",
+                        "quantity": "1.00",
+                        "unit_price": "14000",
+                        "unit_price_currency": "IDR",
+                        "total_price": "14000",
+                        "total_price_currency": "IDR",
+                        "detail": [],
+                        "isproduct": false,
+                        "type": "shipping",
+                        "id": "138645"
+                    }
+                ],
+                "customer_billing": {
+                    "country": "ID",
+                    "address": "Jalan Sugeng Jeroni 69",
+                    "name": "Test Skyshi",
+                    "location": {
+                        "province": {
+                            "name": "Jawa Barat",
+                            "province_id": "9"
+                        },
+                        "subdistrict": {
+                            "name": "Cianjur",
+                            "subdistrict_id": "1409"
+                        },
+                        "city": {
+                            "name": "Kabupaten Cianjur",
+                            "city_id": "104"
+                        }
+                    },
+                    "postal_code": "55251",
+                    "phone_number": "08562905595",
+                    "email": "scorpyku+testnih@gmail.com"
+                },
+                "customer_shipping": {
+                    "country": "ID",
+                    "address": "Jalan Sugeng Jeroni 69",
+                    "name": "Test Skyshi",
+                    "location": {
+                        "province": {
+                            "name": "Jawa Barat",
+                            "province_id": "9"
+                        },
+                        "subdistrict": {
+                            "name": "Cianjur",
+                            "subdistrict_id": "1409"
+                        },
+                        "city": {
+                            "name": "Kabupaten Cianjur",
+                            "city_id": "104"
+                        }
+                    },
+                    "postal_code": "00000",
+                    "phone_number": "08562905595",
+                    "email": "scorpyku+testnih@gmail.com"
+                },
+                "order_subtotal": 368600,
+                "order_subtotal_currency": "IDR",
+                "product_category": [
+                    "discount",
+                    "book"
+                ]
+            }
+        }
+        
+### Get All Bulk Order (Admin CS) [GET /api/bulk-order]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+            
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bulk order",
+            "meta": {},
+            "data": [
+                {
+                    "id": "93204",
+                    "uid": "5994",
+                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516257005.xlsx",
+                    "reseller": {
+                        "name": null,
+                        "email": "andrew@skyshi.com",
+                        "phone": null,
+                        "address": null,
+                        "location": null,
+                        "postal_code": null
+                    },
+                    "orders": [
+                        {
+                            "shipping": {
+                                "name": "Bung Billy",
+                                "email": "mail@example.com",
+                                "phone": "0800000000",
+                                "address": "Jl. Sukamaju, Bandung",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5783",
+                                        "name": "Godean"
+                                    }
+                                },
+                                "postal_code": 55111
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "Yr1kq"
+                        },
+                        {
+                            "shipping": {
+                                "name": "Andrew Junior",
+                                "email": "andrew@skyshi.com",
+                                "phone": 8562905595,
+                                "address": "Jl. Sugeng Jeroni 69",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5781",
+                                        "name": "Depok"
+                                    }
+                                },
+                                "postal_code": 55251
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "PiFeE"
+                        }
+                    ]
+                },
+                {
+                    "id": "93206",
+                    "uid": "5994",
+                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516845979.xlsx",
+                    "reseller": {
+                        "name": "Test Skyshi",
+                        "email": "andreas@skyshi.com",
+                        "phone": "08562905595",
+                        "address": "Jalan Sugeng Jeroni 69",
+                        "location": {
+                            "province": {
+                                "province_id": "9",
+                                "name": "Jawa Barat"
+                            },
+                            "subdistrict": {
+                                "subdistrict_id": "1409",
+                                "name": "Cianjur"
+                            },
+                            "city": {
+                                "city_id": "104",
+                                "name": "Kabupaten Cianjur"
+                            }
+                        },
+                        "postal_code": "55251"
+                    },
+                    "orders": [
+                        {
+                            "shipping": {
+                                "name": "Bung Billy",
+                                "email": "mail@example.com",
+                                "phone": "0800000000",
+                                "address": "Jl. Sukamaju, Bandung",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5783",
+                                        "name": "Godean"
+                                    }
+                                },
+                                "postal_code": 55111
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "Yr1kq"
+                        },
+                        {
+                            "shipping": {
+                                "name": "Andrew Junior",
+                                "email": "andrew@skyshi.com",
+                                "phone": 8562905595,
+                                "address": "Jl. Sugeng Jeroni 69",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5781",
+                                        "name": "Depok"
+                                    }
+                                },
+                                "postal_code": 55251
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "PiFeE"
+                        }
+                    ]
+                }
+            ]
+        }
