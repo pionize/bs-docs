@@ -883,7 +883,12 @@ BillionaireStore API Collection.
         
 ## Commission Collection [/commission]
 
-### Commission List [GET /api/commission]
+### Commission List [GET /api/commission?{?year}{?page}{?pagesize}]
+
++ Parameters
+    + year: 2017 (optional, number)
+    + page: 0 (optional, number)
+    + pagesize: 10 (optional, number)
 
 + Request (application/json)
     + Headers
