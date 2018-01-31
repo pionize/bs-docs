@@ -1242,6 +1242,54 @@ BillionaireStore API Collection.
             ]
         }
 
+### Commission Download [POST /api/commission/download{?year}/{?month}{?program}{?product_type}{?order_type}]
+
++ Parameters
+    + year: 2017 (optional, number)
+    + month: 12 (optional, number)
+    + product_type (optional, string)
+
+        + Values
+            + `discount`
+            + `event`
+            + `digital`
+            + `book`
+            
+    + program (optional, string)
+
+        + Values
+            + `ready`
+            + `promo`
+            + `preorder`
+            
+    + order_type (optional, string)
+
+        + Values
+            + `dropship`
+            + `affiliate`
+            + `regular`
+            + `cod`
+            + `community`
+            + `bulk`
+            + `abroad`
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+            
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "File",
+                "meta": {},
+                "data": [
+                    "http://bs.local/sites/default/files/reseller_commisions/5994-commission.xlsx"
+                ]
+            }
+
 ## Coupon Collection [/coupon]
 
 ### Coupon Apply [POST /api/coupon/apply]
@@ -5436,3 +5484,117 @@ To get product click statistic, send the request using header token and add shar
                 }
             ]
         }
+        
+### Bulk Order Update (Admin CS) [POST /api/bulk-order/{id}]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
+    + Body
+
+            {
+                "status": "andreas@skyshi.com"
+            }
+
++ Parameters
+    + id: 93204 (string, required)
+
++ Response 200 (application/json)
+
+            {
+                "code": 200,
+                "status": true,
+                "message": "Bulk order",
+                "meta": {},
+                "data": {
+                    "id": "93204",
+                    "uid": "5994",
+                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516257005.xlsx",
+                    "reseller": {
+                        "name": null,
+                        "email": "andrew@skyshi.com",
+                        "phone": null,
+                        "address": null,
+                        "location": null,
+                        "postal_code": null
+                    },
+                    "orders": [
+                        {
+                            "shipping": {
+                                "name": "Bung Billy",
+                                "email": "mail@example.com",
+                                "phone": "0800000000",
+                                "address": "Jl. Sukamaju, Bandung",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5783",
+                                        "name": "Godean"
+                                    }
+                                },
+                                "postal_code": 55111
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "Yr1kq"
+                        },
+                        {
+                            "shipping": {
+                                "name": "Andrew Junior",
+                                "email": "andrew@skyshi.com",
+                                "phone": 8562905595,
+                                "address": "Jl. Sugeng Jeroni 69",
+                                "location": {
+                                    "province": {
+                                        "province_id": "5",
+                                        "name": "DI Yogyakarta"
+                                    },
+                                    "city": {
+                                        "city_id": "419",
+                                        "name": "Kabupaten Sleman"
+                                    },
+                                    "subdistrict": {
+                                        "subdistrict_id": "5781",
+                                        "name": "Depok"
+                                    }
+                                },
+                                "postal_code": 55251
+                            },
+                            "products": [
+                                {
+                                    "title": "Paket Jago Jualan",
+                                    "product_id": "56",
+                                    "quantity": "1"
+                                },
+                                {
+                                    "title": "Kirim Email Aja",
+                                    "product_id": "62",
+                                    "quantity": "1"
+                                }
+                            ],
+                            "shipping_service": "JNE REG-15",
+                            "random_number": "PiFeE"
+                        }
+                    ]
+                }
+            }
