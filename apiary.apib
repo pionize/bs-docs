@@ -512,7 +512,112 @@ BillionaireStore API Collection.
                     "branch": "Godean"
                 }
             }
-            
+       
+### Get Reseller Membership status [POST /api/users/membership_status]
+    
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "User",
+            "data": {
+                "code": 200,
+                "status": true,
+                "message": "User status.",
+                "meta": {},
+                "data": {
+                    "expired": "1526317200",
+                    "status": "active",
+                    "order_history": [
+                        {
+                            "created": "1515465382",
+                            "status": "shipped",
+                            "order_id": "49822",
+                            "invoice_number": "RS011849822"
+                        },
+                        {
+                            "created": "1517451324",
+                            "status": "pending",
+                            "order_id": "50101",
+                            "invoice_number": "RS021850101"
+                        },
+                        {
+                            "created": "1517451475",
+                            "status": "pending_confirmation",
+                            "order_id": "50107",
+                            "invoice_number": "RS021850107"
+                        },
+                        {
+                            "created": "1517473206",
+                            "status": "pending",
+                            "order_id": "50114",
+                            "invoice_number": "RS021850114"
+                        },
+                        {
+                            "created": "1517476181",
+                            "status": "pending",
+                            "order_id": "50116",
+                            "invoice_number": "RS021850116"
+                        },
+                        {
+                            "created": "1517478567",
+                            "status": "pending",
+                            "order_id": "50118",
+                            "invoice_number": "RS021850118"
+                        },
+                        {
+                            "created": "1517535583",
+                            "status": "pending",
+                            "order_id": "50121",
+                            "invoice_number": "RS021850121"
+                        },
+                        {
+                            "created": "1517535585",
+                            "status": "pending",
+                            "order_id": "50120",
+                            "invoice_number": "RS021850120"
+                        },
+                        {
+                            "created": "1517538388",
+                            "status": "pending",
+                            "order_id": "50126",
+                            "invoice_number": "RS021850126"
+                        },
+                        {
+                            "created": "1517538393",
+                            "status": "pending",
+                            "order_id": "50125",
+                            "invoice_number": "RS021850125"
+                        },
+                        {
+                            "created": "1517538395",
+                            "status": "pending",
+                            "order_id": "50124",
+                            "invoice_number": "RS021850124"
+                        },
+                        {
+                            "created": "1517540494",
+                            "status": "pending",
+                            "order_id": "50135",
+                            "invoice_number": "RS021850135"
+                        },
+                        {
+                            "created": "1517546020",
+                            "status": "pending",
+                            "order_id": "50137",
+                            "invoice_number": "RS021850137"
+                        }
+                    ]
+                }
+            }
+        }
+
 ## Cart Collection [/cart]
 
 ### Add to Cart [POST /api/cart]
