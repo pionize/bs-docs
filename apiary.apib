@@ -3214,7 +3214,37 @@ BillionaireStore API Collection.
             "data": {
                 "file": "http://bs.local/sites/default/files/invoice-38770.pdf"
             }
-        }    
+        }
+        
+### Bulk Order Confirmation (For Web Admin CS) [POST /api/order/bulk_confirm]
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
+
+    + Body
+
+            {
+                "invoice_numbers": [
+                    "RS011849685",
+                    "RS011849685",
+                    "RS011849686"
+                ]
+            }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Order confirmed",
+            "meta": {},
+            "data": [
+                "RS011849685",
+                "RS011849686"
+            ]
+        }
 
 ## Page List Collection [/page]
 
@@ -4112,7 +4142,7 @@ To get product click statistic, send the request using header token and add shar
 
             Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
 
-    + Body
+    + Body 
 
             {
               "destination" : 3301,
