@@ -5041,9 +5041,11 @@ To get product click statistic, send the request using header token and add shar
                 "message": "Order data",
                 "meta": {},
                 "data": {
-                    "id": "93206",
+                    "id": "93207",
                     "uid": "5994",
-                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516845979.xlsx",
+                    "status": "On Progress",
+                    "updated_by": "pionize",
+                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516867556.xlsx",
                     "reseller": {
                         "name": "Test Skyshi",
                         "email": "andreas@skyshi.com",
@@ -5092,12 +5094,20 @@ To get product click statistic, send the request using header token and add shar
                                 {
                                     "title": "Paket Jago Jualan",
                                     "product_id": "56",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/PAKET%20JAGO%20JUALAN.jpg?itok=4sOscPlk"
+                                    ],
+                                    "weight": "1000.00000 g"
                                 },
                                 {
                                     "title": "Kirim Email Aja",
                                     "product_id": "62",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/kea270x360.png?itok=KlODkE08"
+                                    ],
+                                    "weight": "450.00000 g"
                                 }
                             ],
                             "shipping_service": "JNE REG-15",
@@ -5129,12 +5139,20 @@ To get product click statistic, send the request using header token and add shar
                                 {
                                     "title": "Paket Jago Jualan",
                                     "product_id": "56",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/PAKET%20JAGO%20JUALAN.jpg?itok=4sOscPlk"
+                                    ],
+                                    "weight": "1000.00000 g"
                                 },
                                 {
                                     "title": "Kirim Email Aja",
                                     "product_id": "62",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/kea270x360.png?itok=KlODkE08"
+                                    ],
+                                    "weight": "450.00000 g"
                                 }
                             ],
                             "shipping_service": "JNE REG-15",
@@ -5142,7 +5160,6 @@ To get product click statistic, send the request using header token and add shar
                         }
                     ]
                 }
-            }
             
 ### Bulk Order Checkout (Admin CS) [POST /api/bulk-order]
 
@@ -5434,6 +5451,8 @@ To get product click statistic, send the request using header token and add shar
                     "id": "93204",
                     "uid": "5994",
                     "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516257005.xlsx",
+                    "status": "On Progress",
+                    "updated_by": "pionize",
                     "reseller": {
                         "name": null,
                         "email": "andrew@skyshi.com",
@@ -5448,6 +5467,8 @@ To get product click statistic, send the request using header token and add shar
                     "id": "93206",
                     "uid": "5994",
                     "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516845979.xlsx",
+                    "status": "On Progress",
+                    "updated_by": "pionize",
                     "reseller": {
                         "name": "Test Skyshi",
                         "email": "andreas@skyshi.com",
@@ -5475,6 +5496,8 @@ To get product click statistic, send the request using header token and add shar
                     "id": "93207",
                     "uid": "5994",
                     "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516867556.xlsx",
+                    "status": "On Progress",
+                    "updated_by": "pionize",
                     "reseller": {
                         "name": "Test Skyshi",
                         "email": "andreas@skyshi.com",
@@ -5504,6 +5527,13 @@ To get product click statistic, send the request using header token and add shar
 ### Bulk Order Update (Admin CS) [POST /api/bulk-order/{id}]
 
 + Request (application/json)
+    + Attributes
+        + updated_by: `10843` (string)
+        + status: onprogres (enum)
+            + onprogres
+            + finish
+            + pending
+    
     + Headers
     
             Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmRlcl9pZCI6IjQ5NjQzIiwidXNlcl9pZCI6IjU5OTQiLCJpc3MiOiJodHRwOlwvXC9icy5sb2NhbCIsImF1ZCI6Imh0dHA6XC9cL2JzLmxvY2FsXC9hcGkiLCJpYXQiOjE1MTM2NTE3NTEsIm5iZiI6MTUxMzY1MTc1MSwiZXhwIjoxNTE0MjU2NTUxfQ.hgcVD8Rg_dFy5lWqc1Owo4VC5wv425KaQjjwN6fnlvw
@@ -5511,7 +5541,8 @@ To get product click statistic, send the request using header token and add shar
     + Body
 
             {
-                "status": "andreas@skyshi.com"
+                "status": "onprogress",
+                "updated_by": 10843
             }
 
 + Parameters
@@ -5522,19 +5553,34 @@ To get product click statistic, send the request using header token and add shar
             {
                 "code": 200,
                 "status": true,
-                "message": "Bulk order",
+                "message": "Order data",
                 "meta": {},
                 "data": {
-                    "id": "93204",
+                    "id": "93207",
                     "uid": "5994",
-                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516257005.xlsx",
+                    "status": "On Progress",
+                    "updated_by": "pionize",
+                    "file": "/Users/macbook/Sites/billionairestore/sites/default/files/bulk-order/5994/5994-1516867556.xlsx",
                     "reseller": {
-                        "name": null,
-                        "email": "andrew@skyshi.com",
-                        "phone": null,
-                        "address": null,
-                        "location": null,
-                        "postal_code": null
+                        "name": "Test Skyshi",
+                        "email": "andreas@skyshi.com",
+                        "phone": "08562905595",
+                        "address": "Jalan Sugeng Jeroni 69",
+                        "location": {
+                            "province": {
+                                "province_id": "9",
+                                "name": "Jawa Barat"
+                            },
+                            "subdistrict": {
+                                "subdistrict_id": "1409",
+                                "name": "Cianjur"
+                            },
+                            "city": {
+                                "city_id": "104",
+                                "name": "Kabupaten Cianjur"
+                            }
+                        },
+                        "postal_code": "55251"
                     },
                     "orders": [
                         {
@@ -5563,12 +5609,20 @@ To get product click statistic, send the request using header token and add shar
                                 {
                                     "title": "Paket Jago Jualan",
                                     "product_id": "56",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/PAKET%20JAGO%20JUALAN.jpg?itok=4sOscPlk"
+                                    ],
+                                    "weight": "1000.00000 g"
                                 },
                                 {
                                     "title": "Kirim Email Aja",
                                     "product_id": "62",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/kea270x360.png?itok=KlODkE08"
+                                    ],
+                                    "weight": "450.00000 g"
                                 }
                             ],
                             "shipping_service": "JNE REG-15",
@@ -5600,12 +5654,20 @@ To get product click statistic, send the request using header token and add shar
                                 {
                                     "title": "Paket Jago Jualan",
                                     "product_id": "56",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/PAKET%20JAGO%20JUALAN.jpg?itok=4sOscPlk"
+                                    ],
+                                    "weight": "1000.00000 g"
                                 },
                                 {
                                     "title": "Kirim Email Aja",
                                     "product_id": "62",
-                                    "quantity": "1"
+                                    "quantity": "1",
+                                    "images": [
+                                        "http://bs.local/sites/default/files/styles/product_image/public/products/kea270x360.png?itok=KlODkE08"
+                                    ],
+                                    "weight": "450.00000 g"
                                 }
                             ],
                             "shipping_service": "JNE REG-15",
