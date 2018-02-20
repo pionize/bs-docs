@@ -5525,13 +5525,14 @@ To get product click statistic, send the request using header token and add shar
             ]
         }
         
-### Bulk Order Update (Admin CS) [POST /api/bulk-order/{id}]
+### Bulk Order Update (Admin CS) [PUT /api/bulk-order/{id}]
 
 + Request (application/json)
     + Attributes
         + updated_by: `10843` (string)
-        + status: onprogres (enum)
-            + onprogres
+            Admin CS user id
+        + status: onprogress (enum)
+            + onprogress
             + finish
             + pending
     
