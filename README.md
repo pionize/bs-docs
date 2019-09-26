@@ -1,3 +1,3 @@
 # bs-docs apiary
 
-this is docs
+Billionairestore API Docs
